@@ -1,6 +1,7 @@
 
 #include <msp430.h>
 #include <inttypes.h>
+#include <stdio.h>
 #include "color_sensor.h"
 
 #define FALSE 0
@@ -20,6 +21,48 @@ static uint8_t color_values[NUMBER_OF_COLORS];
 
 static int overflow;
 static uint16_t previous_timer_value;
+static uint16_t timer_ticks_arr[100];
+static int cursor;
+
+// measured average values for black and white
+// row index = color, row[0] = min, row[1] = max
+static int colorRanges[NUMBER_OF_COLORS][2] = {
+  {85, 221},
+  {629, 205},
+  {453, 73},
+  {341, 249}
+};
+
+void swap(int* x, int* y) {
+  int tmp = *x;
+  *x = *y;
+  *y = tmp;
+}
+
+int map(int x, int in_min, int in_max, int out_min, int out_max) {
+  int tmp;
+  if (in_min > in_max) {
+    // swap in_min and in_max
+    tmp = in_min;
+    in_min = in_max;
+    in_max = tmp;
+  }
+  if (out_min > out_max) {
+    // swap out_min and out_max
+    tmp = out_min;
+    out_min = out_max;
+    out_max = tmp;
+  }
+  
+  int res = (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+  if (res > out_max) {
+    return out_max;
+  }
+  if (res < out_min) {
+    return out_min;
+  }
+  return res;
+}
 
 static void set_color(Color_t color) {
   if (color & BIT0) {
@@ -52,9 +95,9 @@ void color_sensor_init(void) {
   // setup P2.1 (OE) as output
   P2DIR |= BIT1;
   
-  // set frequency scaling to 20% (S0 to high, S1 to low)
+  // set frequency scaling to 100% (S0 to high, S1 to high)
   P2OUT |= BIT4;
-  P2OUT &= ~BIT2;
+  P2OUT |= BIT2;
   
   // set OE to low
   P2OUT &= ~BIT1;
@@ -68,7 +111,7 @@ void color_sensor_init(void) {
   // SMCLK, divider 0, continuous mode, timer_clear
   TA0CTL = TASSEL_2 + ID_0 + MC_2 + TACLR;
   
-  set_color(red);
+  set_color(green);
 }
 
 #pragma vector=TIMER0_A0_VECTOR
@@ -94,6 +137,18 @@ __interrupt void timer_isr(void) {
     }
     // next color
     // set_color((Color_t) (++current_color % NUMBER_OF_COLORS));
+
+    if (cursor < 100) {
+      timer_ticks_arr[cursor++] = timer_ticks;
+    } else {
+      unsigned int sum = 0;
+      int i;
+      for(i = 1; i < cursor; ++i) {
+        sum += timer_ticks_arr[i];
+      }
+      printf("%i mapped to %i\n", sum / 99, map(sum / 99, colorRanges[current_color][0], colorRanges[current_color][1], 0, 255));
+      cursor = 0;
+    }
     // overwrite previous timer value
     previous_timer_value = current_timer_value;
   }

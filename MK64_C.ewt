@@ -2119,6 +2119,9 @@
         <name>$PROJ_DIR$\color_sensor.h</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\hal.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>

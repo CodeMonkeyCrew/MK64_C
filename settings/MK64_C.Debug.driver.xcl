@@ -24,15 +24,55 @@
 
 "--cpu_bug_30" 
 
-"--odd_word_check" 
-
 "-d" 
 
-"sim" 
+"fet" 
 
-"--derivativeSim" 
+"--erase_main" 
+
+"--derivative" 
 
 "MSP430F5437A" 
+
+"--protocol" 
+
+"automatic" 
+
+"--eem" 
+
+"EMEX_LARGE_5XX" 
+
+"--port" 
+
+"Automatic" 
+
+"--connection" 
+
+"ti_usb" 
+
+"--use_emulated_breakpoints" 
+
+"--settlingtime=0" 
+
+"--msp430_dll" 
+
+"msp430.dll" 
+
+"--vccDefault" 
+
+"3.3" 
+
+"--jtag_speed" 
+
+"medium" 
+
+"--memtype" 
+
+"F" 
+
+"--cycleCounter" 
+
+"2" 
 
 
 
