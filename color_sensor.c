@@ -2,6 +2,7 @@
 #include <msp430.h>
 #include <inttypes.h>
 #include <stdio.h>
+#include <math.h>
 #include "color_sensor.h"
 
 #define FALSE 0
@@ -18,6 +19,8 @@ typedef enum color {
 
 static Color_t current_color;
 static uint8_t color_values[NUMBER_OF_COLORS];
+static uint8_t prev_color_values[NUMBER_OF_COLORS];
+
 
 static int overflow;
 static uint16_t previous_timer_value;
@@ -27,10 +30,10 @@ static int cursor;
 // measured average values for black and white
 // row index = color, row[0] = min, row[1] = max
 static int colorRanges[NUMBER_OF_COLORS][2] = {
-  {85, 221},
-  {629, 205},
-  {453, 73},
-  {341, 249}
+  {527, 168},
+  {508, 174},
+  {422, 74},
+  {170, 217}
 };
 
 void swap(int* x, int* y) {
@@ -40,28 +43,16 @@ void swap(int* x, int* y) {
 }
 
 int map(int x, int in_min, int in_max, int out_min, int out_max) {
-  int tmp;
-  if (in_min > in_max) {
-    // swap in_min and in_max
-    tmp = in_min;
-    in_min = in_max;
-    in_max = tmp;
-  }
-  if (out_min > out_max) {
-    // swap out_min and out_max
-    tmp = out_min;
-    out_min = out_max;
-    out_max = tmp;
-  }
-  
-  int res = (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-  if (res > out_max) {
+  int range = (in_max - in_min);
+  float y = x - in_min;
+  int result =  ((out_max - out_min) * y/range) + out_min;
+  if(result > out_max){
     return out_max;
   }
-  if (res < out_min) {
+  if(result < out_min){
     return out_min;
   }
-  return res;
+  return result;
 }
 
 static void set_color(Color_t color) {
@@ -111,7 +102,7 @@ void color_sensor_init(void) {
   // SMCLK, divider 0, continuous mode, timer_clear
   TA0CTL = TASSEL_2 + ID_0 + MC_2 + TACLR;
   
-  set_color(green);
+  set_color(red);
 }
 
 #pragma vector=TIMER0_A0_VECTOR
@@ -131,15 +122,29 @@ __interrupt void timer_isr(void) {
       timer_ticks = current_timer_value - previous_timer_value;
     }
     // TODO: calculate color value
-    // color_values[current_color] = get_color_value(timer_ticks);
+     color_values[current_color] =  map(timer_ticks, colorRanges[current_color][0], colorRanges[current_color][1], 0, 255);
     if (current_color == (NUMBER_OF_COLORS - 1)) {
+      long redVal = prev_color_values[red] - color_values[red];
+      long blueVal =  prev_color_values[blue] - color_values[blue];
+      long clearVal = prev_color_values[clear] - color_values[clear];
+      long greenVal = prev_color_values[green] - color_values[green];
+
+      long result = sqrt(pow(redVal,2) + pow(blueVal,2) + pow(clearVal,2) + pow(greenVal,2)) ;
+      
+      
       // TODO: notify listeners
+      
+      //swap pointer of arrays
+      int* pTemp = prev_color_value;
+      prev_color_values = color_values;
+      color_values = pTemp;
     }
     // next color
-    // set_color((Color_t) (++current_color % NUMBER_OF_COLORS));
+     set_color((Color_t) (++current_color % NUMBER_OF_COLORS));
 
     if (cursor < 100) {
       timer_ticks_arr[cursor++] = timer_ticks;
+      
     } else {
       unsigned int sum = 0;
       int i;
@@ -147,6 +152,7 @@ __interrupt void timer_isr(void) {
         sum += timer_ticks_arr[i];
       }
       printf("%i mapped to %i\n", sum / 99, map(sum / 99, colorRanges[current_color][0], colorRanges[current_color][1], 0, 255));
+      
       cursor = 0;
     }
     // overwrite previous timer value
