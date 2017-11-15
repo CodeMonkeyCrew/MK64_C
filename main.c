@@ -92,7 +92,7 @@ int main( void )
   // 32 x 32 x 25 MHz / 32,768 Hz = 781250 = MCLK cycles for DCO to settle
   __delay_cycles(781250);
 
-  //init_timer_pwm_lenkung(0xFF);
+  init_timer_pwm_lenkung(32);
   //init_timer_pwm_antrieb(125); // 4 khz pwm
   //init_timer_pwm_antrieb(250); // 2 khz pwm
   //init_timer_pwm_antrieb(500); // 1 khz pwm

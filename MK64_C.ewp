@@ -2325,6 +2325,12 @@
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\queue.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\queue.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\timer_pwm.c</name>
     </file>
     <file>
