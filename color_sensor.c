@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "color_sensor.h"
+#include "util.h"
 
 #define FALSE 0
 #define TRUE !FALSE
@@ -42,18 +43,6 @@ void swap(int* x, int* y) {
   *y = tmp;
 }
 
-int map(int x, int in_min, int in_max, int out_min, int out_max) {
-  int range = (in_max - in_min);
-  float y = x - in_min;
-  int result =  ((out_max - out_min) * y/range) + out_min;
-  if(result > out_max){
-    return out_max;
-  }
-  if(result < out_min){
-    return out_min;
-  }
-  return result;
-}
 
 static void set_color(Color_t color) {
   if (color & BIT0) {
@@ -135,9 +124,9 @@ __interrupt void timer_isr(void) {
       // TODO: notify listeners
       
       //swap pointer of arrays
-      int* pTemp = prev_color_value;
+    /*  int* pTemp = prev_color_value;
       prev_color_values = color_values;
-      color_values = pTemp;
+      color_values = pTemp;*/
     }
     // next color
      set_color((Color_t) (++current_color % NUMBER_OF_COLORS));

@@ -1,174 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>2</fileVersion>
-    <fileChecksum>2631871620</fileChecksum>
+    <fileChecksum>4211226916</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\queue.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\MK64_C.pbd</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\color_sensor.pbi</file>
-            <file>$PROJ_DIR$\queue.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-            <file>$PROJ_DIR$\Debug\List\MK64_C.map</file>
-            <file>$PROJ_DIR$\Debug\Obj\timer.pbi</file>
-            <file>$TOOLKIT_DIR$\config\linker\lnk430f5437a.xcl</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\inttypes.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\color_sensor.r43</file>
-            <file>$PROJ_DIR$\examples\timer.c</file>
-            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\util.c</file>
+            <file>$PROJ_DIR$\util.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\util.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\util.pbi</file>
             <file>$PROJ_DIR$\examples\blink_led.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
             <file>$PROJ_DIR$\timer_pwm.h</file>
-            <file>$PROJ_DIR$\timer_pwm.c</file>
-            <file>$PROJ_DIR$\examples\blink_led.c</file>
-            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
-            <file>$PROJ_DIR$\color_sensor.c</file>
-            <file>$PROJ_DIR$\examples\timer.h</file>
             <file>$PROJ_DIR$\color_sensor.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\color_sensor.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\color_sensor.r43</file>
+            <file>$PROJ_DIR$\examples\blink_led.c</file>
+            <file>$PROJ_DIR$\color_sensor.c</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\examples\timer.c</file>
+            <file>$PROJ_DIR$\timer_pwm.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\timer.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\inttypes.h</file>
+            <file>$TOOLKIT_DIR$\inc\msp430.h</file>
             <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.h</file>
             <file>$TOOLKIT_DIR$\inc\msp430f5437a.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
             <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\blink_led.pbi</file>
+            <file>$TOOLKIT_DIR$\config\linker\lnk430f5437a.xcl</file>
+            <file>$PROJ_DIR$\examples\timer.h</file>
             <file>$PROJ_DIR$\hal.h</file>
             <file>$TOOLKIT_DIR$\inc\dlib\c\stdint.h</file>
-            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\MK64_C.pbd</file>
+            <file>$PROJ_DIR$\Debug\List\MK64_C.map</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\blink_led.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
+            <file>$TOOLKIT_DIR$\inc\in430.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\timer_pwm.r43</file>
             <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.r43</file>
+            <file>$PROJ_DIR$\Debug\Obj\timer_pwm.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\blink_led.r43</file>
             <file>$TOOLKIT_DIR$\config\linker\multiplier32.xcl</file>
-            <file>$PROJ_DIR$\Debug\Obj\queue.r43</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
+            <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
             <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+            <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\MK64_C.d43</file>
             <file>$PROJ_DIR$\Debug\Obj\timer.r43</file>
             <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\timer_pwm.pbi</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\blink_led.r43</file>
-            <file>$PROJ_DIR$\Debug\Obj\queue.pbi</file>
-            <file>$PROJ_DIR$\Debug\Exe\MK64_C.d43</file>
-            <file>$PROJ_DIR$\Debug\Obj\timer_pwm.r43</file>
-            <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
-            <file>$TOOLKIT_DIR$\inc\in430.h</file>
-            <file>$PROJ_DIR$\Debug\Exe\MK64_C.ulp</file>
         </outputs>
         <file>
-            <name>$PROJ_DIR$\queue.c</name>
+            <name>$PROJ_DIR$\util.c</name>
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 33</file>
+                    <file> 2</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 45</file>
+                    <file> 3</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 40 3 8 36 24 2 34 41 37 28 20 25 49 30 6</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 41 30 8 34 36 25 49 28 3 37 24 2 20 40 6</file>
+                    <file> 1</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\examples\timer.c</name>
+            <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
-                    <name>ICC430</name>
-                    <file> 35</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 10</file>
+                    <name>XLINK</name>
+                    <file> 46 29</file>
                 </tool>
             </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 20 25 49 30 22</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 30 49 25 20 22</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\main.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 26</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 7</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 20 25 49 30 17 23 12 3 29 8 36 24 2 34 41 38 37 4</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 49 23 12 2 3 4 17 38 25 34 24 8 20 30 29 36 41 37</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\timer_pwm.c</name>
-            <outputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 47</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 42</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICC430</name>
-                    <file> 20 25 49 30 17</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 8 30 25 49 29 41 17 36 20 12 3 34 24 2</file>
-                </tool>
-            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\examples\blink_led.c</name>
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 44</file>
+                    <file> 38</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 27</file>
+                    <file> 31</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 20 25 49 30 16</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 30 49 25 20 16</file>
+                    <file> 19 21 34 42 4</file>
                 </tool>
             </inputs>
         </file>
@@ -177,7 +107,26 @@
             <outputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 13</file>
+                    <file> 10</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 9</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 19 21 34 42 18 8 27 30 48 20 14 44 40 45 43 22 33 41 32 7 1</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 23</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
@@ -187,11 +136,45 @@
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 20 25 49 30 12 3 29 8 36 24 2 34 41 38 37 4 39 43 48 23</file>
+                    <file> 19 21 34 42 6 7 18 8 27 30 48 20 14 44 40 45 43 22</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\examples\timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 47</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 25 49 8 23 38 3 12 39 29 36 41 37 48 20 30 34 24 2 4 43</file>
+                    <file> 17</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 19 21 34 42 25</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\timer_pwm.c</name>
+            <outputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 35</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 37</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICC430</name>
+                    <file> 19 21 34 42 6 1</file>
                 </tool>
             </inputs>
         </file>
@@ -200,28 +183,15 @@
             <outputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 9</file>
+                    <file> 29</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>XLINK</name>
-                    <file> 11 32 44 13 26 33 35 47 31</file>
+                    <file> 24 39 38 10 23 47 35 2 36</file>
                 </tool>
             </inputs>
-        </file>
-        <file>
-            <name>[ROOT_NODE]</name>
-            <outputs>
-                <tool>
-                    <name>ULP430</name>
-                    <file> 50</file>
-                </tool>
-                <tool>
-                    <name>XLINK</name>
-                    <file> 46 9</file>
-                </tool>
-            </outputs>
         </file>
     </configuration>
     <configuration>

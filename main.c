@@ -4,19 +4,15 @@
 #include <stdio.h>
 
 void test_lenkung(void) {
-  volatile int i, j;
-  for(i = 128; i < 256; ++i) {
-    set_timer_pwm_lenkung(i);
-    for(j = 0; j < 20000; ++j); // delay
-  }
+  volatile int i, j;  
   while(1) {
-    for(i = 255; i >= 0; --i) {
+    for(i = 3125; i <= 6250; i = i + 10) {
+    set_timer_pwm_lenkung(i);
+    for(j = 0; j < 10000; ++j); // delay
+  }
+    for(i = 6250; i >= 3125; i = i - 10) {
       set_timer_pwm_lenkung(i);
-      for(j = 0; j < 20000; ++j); // delay
-    }
-    for(i = 0; i < 256; ++i) {
-      set_timer_pwm_lenkung(i);
-      for(j = 0; j < 20000; ++j); // delay
+      for(j = 0; j < 10000; ++j); // delay
     }
   }
 }
@@ -73,7 +69,7 @@ int main( void )
 
   // USC module configuration, Fdcoclockdiv = Fmclk = 25MHz
   UCSCTL8 &= ~SMCLKREQEN;         // disable SMCLK clock requests
-  UCSCTL3 = (0 * FLLREFDIV0)      // FLL ref divider 1
+  UCSCTL3 = (0 * FLLREFDIV0)            // FLL ref divider 1
           + SELREF2;              // set REFOCLK as FLL reference clock source
   UCSCTL4 = SELA__REFOCLK         // ACLK = REFO
           + SELM__DCOCLKDIV       // MCLK = DCOCLKDIV
@@ -92,15 +88,16 @@ int main( void )
   // 32 x 32 x 25 MHz / 32,768 Hz = 781250 = MCLK cycles for DCO to settle
   __delay_cycles(781250);
 
-  init_timer_pwm_lenkung(32);
-  //init_timer_pwm_antrieb(125); // 4 khz pwm
+  init_timer_pwm_lenkung(255);
+ // init_timer_pwm_antrieb(127); // 4 khz pwm
   //init_timer_pwm_antrieb(250); // 2 khz pwm
   //init_timer_pwm_antrieb(500); // 1 khz pwm
-  //start_timer_pwm();
+  start_timer_pwm();
+  //test_lenkung();
   //test_antrieb();
   
   // initialize color sensor
-  color_sensor_init();
+//  color_sensor_init();
 
   //_BIS_SR(LPM0_bits + GIE);
   __enable_interrupt();

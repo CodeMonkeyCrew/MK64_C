@@ -57,7 +57,7 @@
                 </option>
                 <option>
                     <name>RTLibraryPath</name>
-                    <state>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</state>
+                    <state>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.r43</state>
                 </option>
                 <option>
                     <name>Input variant</name>
@@ -104,11 +104,11 @@
                 </option>
                 <option>
                     <name>GStackSize2</name>
-                    <state>80</state>
+                    <state>160</state>
                 </option>
                 <option>
                     <name>GHeapSize2</name>
-                    <state>80</state>
+                    <state>160</state>
                 </option>
                 <option>
                     <name>RadioDataModelType</name>
@@ -771,7 +771,7 @@
                 </option>
                 <option>
                     <name>SecondaryOutputFile</name>
-                    <state></state>
+                    <state>(None for the selected format)</state>
                 </option>
                 <option>
                     <name>XDefines</name>
@@ -823,7 +823,7 @@
                 </option>
                 <option>
                     <name>XclFile</name>
-                    <state>lnk0t.xcl</state>
+                    <state>$TOOLKIT_DIR$\config\linker\lnk430f5437a.xcl</state>
                 </option>
                 <option>
                     <name>XclFileSlave</name>
@@ -911,7 +911,7 @@
                 </option>
                 <option>
                     <name>xcProgramEntryLabel</name>
-                    <state></state>
+                    <state>__program_start</state>
                 </option>
                 <option>
                     <name>DebugInformation</name>
@@ -951,7 +951,7 @@
                 </option>
                 <option>
                     <name>ExtraOutputFile</name>
-                    <state></state>
+                    <state>MK64_C.a43</state>
                 </option>
                 <option>
                     <name>ExtraOutputFormat</name>
@@ -2325,15 +2325,15 @@
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\queue.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\queue.h</name>
-    </file>
-    <file>
         <name>$PROJ_DIR$\timer_pwm.c</name>
     </file>
     <file>
         <name>$PROJ_DIR$\timer_pwm.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\util.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\util.h</name>
     </file>
 </project>
